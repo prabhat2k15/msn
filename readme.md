@@ -37,8 +37,7 @@ with users and Modestreet team.
 - copy the env file **cp .env.example .env** and fill in the crdentials
 - run command **php artisan generate:key** to set unique app key
 - run **php artisan config:cache** to setup enviroment credentials
-- run **chmod -R 777 storage/** 
-- 
+- run **chmod -R 777 storage** 
 
 ## Contributing
 

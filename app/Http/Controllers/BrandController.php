@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Brand;
 use App\BrandAdmin;
 
@@ -14,11 +15,23 @@ class BrandController extends Controller
     }
     public function index()
     {
-      return view('brand/index');
+      $brands = Brand::orderBy('created_at', 'desc')
+               ->take(7)
+               ->get();
+      $count   =Brand::count();
+
+      return view('brand/index')->with('brands',$brands)
+                                ->with('brandcount',$count);
     }
 
     public function createBrand(Request $request)
     {
+      $request->validate([
+        'email' => 'bail|required|unique:brands|max:255',
+        'username' => 'bail|required|unique:brands|max:255',
+        'name'  => 'bail|required|max:255',
+      ]);
+
         $brand = new Brand;
         $brand->name    = $request->name;
         $brand->username= $request->username;
@@ -28,7 +41,8 @@ class BrandController extends Controller
         $brand->mobile  = $request->mobile;
         $brand->type    = $request->type;
         $brand->save();
-        return 'done';
+
+        return redirect()->route('brand');
     }
 
     public function managerForm()
@@ -39,12 +53,21 @@ class BrandController extends Controller
 
     public function createManager(Request $request)
     {
+      // $request->validate([
+      //   'email' => 'bail|required|unique:brandadmins|max:255',
+      //   'username' => 'bail|required|unique:brandadmins|max:255',
+      //   'name'  => 'bail|required|max:255',
+      // ]);
+
       $ba = new BrandAdmin;
       $ba->name   = $request->name;
       $ba->email  = $request->email;
       $ba->mobile = $request->mobile;
-      $ba->password= bcrypt('123');
+      $ba->password= bcrypt('test123');
+      $ba->active = 1;
       $ba->save();
-      echo 'done';
+
+       DB::insert('insert into brandadminmap (brandadminid,brandid) values (?, ?)', [$ba->id, $request->brandid]);
+      return redirect()->route('brand');
     }
 }

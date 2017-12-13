@@ -132,7 +132,7 @@
 						<div class="card-text">
 							<!-- <p></p> -->
 						</div>
-						<form class="form" action="createmanager" method="POST">
+						<form class="form" action="{{route('createmanager')}}" method="POST">
               {{csrf_field()}}
 							<div class="form-body">
 								<div class="form-group">
@@ -146,7 +146,7 @@
 								</div>
 
 								<div class="form-group">
-									<label for="eventRegInput1">Manager Name</label>
+									<label for="eventRegInput1">Admin Name</label>
 									<input type="text" id="eventRegInput1" class="form-control" placeholder="eg. Nike" name="name">
 								</div>
 

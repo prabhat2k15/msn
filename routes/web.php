@@ -24,14 +24,23 @@ Route::get('/home', 'HomeController@index')->name('home');
 | Brand Routes
 |--------------------------------------------------------------------------
 */
-Route::get('brand','BrandController@index')->name('brand');
+Route::get('brand/dashboard','BrandController@index')->name('brand');
 
-Route::get('brandform',function(){
+Route::get('brand/form',function(){
   return view('brand/brandform');
 })->middleware('auth')->name('brandform');
 
 Route::post('createbrand','BrandController@createBrand')->name('createbrand');
 
-Route::get('managerform','BrandController@managerForm')->name('managerform');
+Route::get('brand/manager/form','BrandController@managerForm')->name('managerform');
 
 Route::post('createmanager','BrandController@createManager')->name('createmanager');
+
+
+/*
+|--------------------------------------------------------------------------
+| Order Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::get('order/dashboard','OrderController@index')->name('order');

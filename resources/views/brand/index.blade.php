@@ -15,7 +15,7 @@
                     <i class="icon-camera7 font-large-2 white"></i>
                 </div>
                 <div class="p-2 bg-cyan white media-body">
-                    <h5>New Products</h5>
+                    <h5>Brand</h5>
                     <h5 class="text-bold-400">28</h5>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     <i class="icon-user1 font-large-2 white"></i>
                 </div>
                 <div class="p-2 bg-deep-orange white media-body">
-                    <h5>New Users</h5>
+                    <h5>Stores</h5>
                     <h5 class="text-bold-400">1,22,356</h5>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <i class="icon-cart font-large-2 white"></i>
                 </div>
                 <div class="p-2 bg-teal white media-body">
-                    <h5>New Orders</h5>
+                    <h5>Products</h5>
                     <h5 class="text-bold-400">4,65,879</h5>
                 </div>
             </div>
@@ -77,7 +77,7 @@
 <div class="col-xl-8 col-lg-12">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Ongoing Projects</h4>
+            <h4 class="card-title">Recent Brands</h4>
             <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
             <div class="heading-elements">
                 <ul class="list-inline mb-0">
@@ -88,33 +88,34 @@
         </div>
         <div class="card-body">
             <div class="card-block">
-                <p class="m-0">Total ongoing projects 6<span class="float-xs-right"><a href="#" target="_blank">Project Summary <i class="icon-arrow-right2"></i></a></span></p>
+                <p class="m-0">Total Brands : {{$brandcount}}<span class="float-xs-right"><a href="#" target="_blank">See All <i class="icon-arrow-right2"></i></a></span></p>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover mb-0">
                     <thead>
                         <tr>
-                            <th>Project</th>
-                            <th>Owner</th>
-                            <th>Priority</th>
+                            <th>Brand/Label</th>
+                            <th>Company</th>
+                            <th>Page</th>
                             <th>Progress</th>
                         </tr>
                     </thead>
                     <tbody>
+                      @foreach($brands as $brand)
                         <tr>
-                            <td class="text-truncate">ReactJS App</td>
+                            <td class="text-truncate">{{$brand->name}}</td>
                             <td class="text-truncate">
-                                <span class="avatar avatar-xs"><img src="../../app-assets/images/portrait/small/avatar-s-4.png" alt="avatar"></span> <span>Sarah W.</span>
+                                <span class="avatar avatar-xs"><img src="{{asset('app-assets/images/logo/ms.png')}}" alt="avatar"></span> <span>{{$brand->company}}</span>
                             </td>
-                            <td class="text-truncate"><span class="tag tag-success">Low</span></td>
+                            <td class="text-truncate"><span class="tag tag-success">{{$brand->username}}</span></td>
                             <td class="valign-middle">
                                 <progress value="88" max="100" class="progress progress-xs progress-success m-0">88%</progress>
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td class="text-truncate">Fitness App</td>
                             <td class="text-truncate">
-                                <span class="avatar avatar-xs"><img src="../../app-assets/images/portrait/small/avatar-s-5.png" alt="avatar"></span> <span>Edward C.</span>
+                                <span class="avatar avatar-xs"><img src="{{asset('app-assets/images/logo/ms.png')}}" alt="avatar"></span> <span>Edward C.</span>
                             </td>
                             <td class="text-truncate"><span class="tag tag-warning">Medium</span></td>
                             <td class="valign-middle">
@@ -124,7 +125,7 @@
                         <tr>
                             <td class="text-truncate">SOU plugin</td>
                             <td class="text-truncate">
-                                <span class="avatar avatar-xs"><img src="../../app-assets/images/portrait/small/avatar-s-6.png" alt="avatar"></span> <span>Carol E.</span>
+                                <span class="avatar avatar-xs"><img src="{{asset('app-assets/images/logo/ms.png')}}" alt="avatar"></span> <span>Carol E.</span>
                             </td>
                             <td class="text-truncate"><span class="tag tag-danger">Critical</span></td>
                             <td class="valign-middle">
@@ -134,7 +135,7 @@
                         <tr>
                             <td class="text-truncate">Android App</td>
                             <td class="text-truncate">
-                                <span class="avatar avatar-xs"><img src="../../app-assets/images/portrait/small/avatar-s-7.png" alt="avatar"></span> <span>Gregory L.</span>
+                                <span class="avatar avatar-xs"><img src="{{asset('app-assets/images/logo/ms.png')}}" alt="avatar"></span> <span>Gregory L.</span>
                             </td>
                             <td class="text-truncate"><span class="tag tag-success">Low</span></td>
                             <td class="valign-middle">
@@ -144,7 +145,7 @@
                         <tr>
                             <td class="text-truncate">ABC Inc. UI/UX</td>
                             <td class="text-truncate">
-                                <span class="avatar avatar-xs"><img src="../../app-assets/images/portrait/small/avatar-s-8.png" alt="avatar"></span> <span>Susan S.</span>
+                                <span class="avatar avatar-xs"><img src="{{asset('app-assets/images/logo/ms.png')}}" alt="avatar"></span> <span>Susan S.</span>
                             </td>
                             <td class="text-truncate"><span class="tag tag-warning">Medium</span></td>
                             <td class="valign-middle">
@@ -154,7 +155,7 @@
                         <tr>
                             <td class="text-truncate">Product UI</td>
                             <td class="text-truncate">
-                                <span class="avatar avatar-xs"><img src="../../app-assets/images/portrait/small/avatar-s-9.png" alt="avatar"></span> <span>Walter K.</span>
+                                <span class="avatar avatar-xs"><img src="{{asset('app-assets/images/logo/ms.png')}}" alt="avatar"></span> <span>Walter K.</span>
                             </td>
                             <td class="text-truncate"><span class="tag tag-danger">Critical</span></td>
                             <td class="valign-middle">
@@ -164,13 +165,14 @@
                         <tr>
                             <td class="text-truncate">Fitness App</td>
                             <td class="text-truncate">
-                                <span class="avatar avatar-xs"><img src="../../app-assets/images/portrait/small/avatar-s-5.png" alt="avatar"></span> <span>Edward C.</span>
+                                <span class="avatar avatar-xs"><img src="{{asset('app-assets/images/logo/ms.png')}}" alt="avatar"></span> <span>Edward C.</span>
                             </td>
                             <td class="text-truncate"><span class="tag tag-warning">Medium</span></td>
                             <td class="valign-middle">
                                 <progress value="55" max="100" class="progress progress-xs progress-warning m-0">55%</progress>
                             </td>
-                        </tr>
+                        </tr> -->
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -264,7 +266,7 @@
                     </div>
                     <div id="accordion12" role="tabpanel" aria-labelledby="heading12" class="card-collapse collapse in" aria-expanded="true">
                         <div class="card-block">
-                            <p class="card-text">@foreach($brands as $brand) {{$brand->name}} @endforeach Sugar plum bear claw oat cake chocolate jelly tiramisu dessert pie. Tiramisu macaroon muffin jelly marshmallow cake. Pastry oat cake chupa chups.</p>
+                            <p class="card-text"> Sugar plum bear claw oat cake chocolate jelly tiramisu dessert pie. Tiramisu macaroon muffin jelly marshmallow cake. Pastry oat cake chupa chups.</p>
                         </div>
                     </div>
                     <div id="heading13" role="tab" class="card-header border-bottom-grey border-bottom-lighten-2">

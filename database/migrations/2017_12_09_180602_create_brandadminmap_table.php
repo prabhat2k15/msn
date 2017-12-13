@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBrandAdminsTable extends Migration
+class CreateBrandadminmapTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateBrandAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brandadmin', function (Blueprint $table) {
+        Schema::create('brandadminmap', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('mobile');
-            $table->string('password');
-            $table->timestamps();
+            $table->integer('brandadminid');
+            $table->integer('brandid');
         });
-    }//name email contact password
+    }
 
     /**
      * Reverse the migrations.
@@ -30,6 +27,6 @@ class CreateBrandAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brand_admins');
+        Schema::dropIfExists('brandadminmap');
     }
 }

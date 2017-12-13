@@ -21,29 +21,24 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
 
-## Learning Laravel
+## About this project
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+SBDs for Modestreet can be major categorised as per user types i.e. **Admin** & **Seller**.
+As the Admin of Modestreet, the personnel should have a place where it can review all pertinent information regarding the performance of Modestreet. The dashboard should be customisable and offer summary information regarding various aspects of Modestreet, such as user statistics,product statistics, and other e-commerce performance metrics.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+As a Seller partner on Modestreet, the personnel should be able to manage their product
+catalogue, track inventory, change status of products, manage orders, and track interactions
+with users and Modestreet team.
 
-## Laravel Sponsors
+## How to setup
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+- clone the repo
+- open project in terminal
+- copy the env file **cp .env.example .env** and fill in the crdentials
+- run command **php artisan generate:key** to set unique app key
+- run **php artisan config:cache** to setup enviroment credentials
+- run **chmod -R 777 storage/** 
+- 
 
 ## Contributing
 

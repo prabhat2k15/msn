@@ -132,11 +132,21 @@
 				<div class="card-body collapse in">
 					<div class="card-block">
 						<div class="card-text">
-							<!-- <p></p> -->
+							<p>
+				@if ($errors->any())
+		            <div class="alert alert-danger">
+		                <ul>
+		                    @foreach ($errors->all() as $error)
+		                        <li>{{ $error }}</li>
+		                    @endforeach
+		                </ul>
+		            </div>
+		        @endif </p>
 						</div>
 						<form class="form" action="{{route('createbrand')}}" method="POST">
 							<div class="form-body">
                 {{ csrf_field() }}
+                
 								<div class="form-group">
 									<label for="eventRegInput1">Brand/Label Name</label>
 									<input type="text" id="eventRegInput1" class="form-control" placeholder="eg. Nike" name="name">

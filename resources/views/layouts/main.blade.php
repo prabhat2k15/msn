@@ -179,7 +179,7 @@
         <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
           <li class=" nav-item"><a href="index.html"><i class="icon-home3"></i><span data-i18n="nav.dash.main" class="menu-title">Dashboard</span><span class="tag tag tag-primary tag-pill float-xs-right mr-2">2</span></a>
             <ul class="menu-content">
-              <li class="active"><a href="{{route('home')}}" data-i18n="nav.dash.main" class="menu-item">Dashboard</a>
+              <li class="{{ Request::path() == 'home' ? 'active' : '' }}"><a href="{{route('home')}}" data-i18n="nav.dash.main" class="menu-item">Dashboard</a>
               </li>
               <li><a href="dashboard-2.html" data-i18n="nav.dash.main" class="menu-item">Test 2</a>
               </li>
@@ -187,7 +187,7 @@
           </li>
           <li class=" nav-item"><a href="#"><i class="icon-stack-2"></i><span data-i18n="nav.page_layouts.main" class="menu-title">Brand Admin</span></a>
             <ul class="menu-content">
-              <li><a href="{{route('brand')}}" data-i18n="nav.page_layouts.1_column" class="menu-item">Dashboard</a>
+              <li class="{{ Request::path() == 'brand/dashboard' ? 'active' : '' }}"><a href="{{route('brand')}}" data-i18n="nav.page_layouts.1_column" class="menu-item">Dashboard</a>
               </li>
               <li><a href="layout-2-columns.html" data-i18n="nav.page_layouts.2_columns" class="menu-item">2 columns</a>
               </li>
@@ -195,7 +195,7 @@
           </li>
           <li class=" nav-item"><a href="#"><i class="icon-briefcase4"></i><span data-i18n="nav.project.main" class="menu-title">Orders</span></a>
             <ul class="menu-content">
-              <li><a href="{{route('order')}}" data-i18n="nav.invoice.invoice_template" class="menu-item">Dashboard</a>
+              <li class="{{ Request::path() == 'order/dashboard' ? 'active' : '' }}"><a href="{{route('order')}}" data-i18n="nav.invoice.invoice_template" class="menu-item">Dashboard</a>
               </li>
               <li><a href="gallery-grid.html" data-i18n="nav.gallery_pages.gallery_grid" class="menu-item">Report</a>
               </li>

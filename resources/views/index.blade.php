@@ -14,8 +14,8 @@
             <div class="card-block">
                 <div class="media">
                     <div class="media-body text-xs-left">
-                        <h3 class="pink">278</h3>
-                        <span>New Projects</span>
+                        <h3 class="pink">{{$brand}}</h3>
+                        <a href="{{route('brand')}}"><span>Brand</span></a> 
                     </div>
                     <div class="media-right media-middle">
                         <i class="icon-bag2 pink font-large-2 float-xs-right"></i>
@@ -31,8 +31,8 @@
             <div class="card-block">
                 <div class="media">
                     <div class="media-body text-xs-left">
-                        <h3 class="teal">156</h3>
-                        <span>New Clients</span>
+                        <h3 class="teal">{{$order}}</h3>
+                        <a href="{{route('order')}}"><span>Orders</span></a> 
                     </div>
                     <div class="media-right media-middle">
                         <i class="icon-user1 teal font-large-2 float-xs-right"></i>
@@ -48,8 +48,8 @@
             <div class="card-block">
                 <div class="media">
                     <div class="media-body text-xs-left">
-                        <h3 class="deep-orange">64.89 %</h3>
-                        <span>Conversion Rate</span>
+                        <h3 class="deep-orange">{{$product}}</h3>
+                        <a href="{{route('brand')}}"><span>Product</span></a> 
                     </div>
                     <div class="media-right media-middle">
                         <i class="icon-diagram deep-orange font-large-2 float-xs-right"></i>
@@ -65,8 +65,8 @@
             <div class="card-block">
                 <div class="media">
                     <div class="media-body text-xs-left">
-                        <h3 class="cyan">423</h3>
-                        <span>Support Tickets</span>
+                        <h3 class="cyan">{{$msuser}}</h3>
+                        <a href="{{route('brand')}}"><span>Users</span></a> 
                     </div>
                     <div class="media-right media-middle">
                         <i class="icon-ios-help-outline cyan font-large-2 float-xs-right"></i>
@@ -99,7 +99,7 @@
             <div class="row">
                 <div class="col-xs-3 text-xs-center">
                     <span class="text-muted">Total Projects</span>
-                    <h2 class="block font-weight-normal">18</h2>
+                    <h2 class="block font-weight-normal">180</h2>
                     <progress class="progress progress-xs mt-2 progress-success" value="70" max="100"></progress>
                 </div>
                 <div class="col-xs-3 text-xs-center">

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Brand;
+use App\Order;
+use App\Product;
+use App\Msuser;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $brand=Brand::count();
+        $order=Order::count();
+        $product=Product::count();
+        $msuser=Msuser::count();
+        return view('index')
+                    ->with('brand',$brand)
+                    ->with('product',$product)
+                    ->with('msuser',$msuser)
+                    ->with('order',$order);
     }
 }

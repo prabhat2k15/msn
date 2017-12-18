@@ -53,11 +53,10 @@ class BrandController extends Controller
 
     public function createManager(Request $request)
     {
-      // $request->validate([
-      //   'email' => 'bail|required|unique:brandadmins|max:255',
-      //   'username' => 'bail|required|unique:brandadmins|max:255',
-      //   'name'  => 'bail|required|max:255',
-      // ]);
+      $request->validate([
+        'email' => 'bail|required|unique:brandadmins|max:255',
+        'name'  => 'bail|required|max:255',
+      ]);
 
       $ba = new BrandAdmin;
       $ba->name   = $request->name;

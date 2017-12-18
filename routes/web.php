@@ -44,3 +44,5 @@ Route::post('createmanager','BrandController@createManager')->name('createmanage
 */
 
 Route::get('order/dashboard','OrderController@index')->name('order');
+
+// Route::get()

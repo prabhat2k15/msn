@@ -13,7 +13,7 @@
                 <div class="card-block">
                     <div class="media">
                         <div class="media-body text-xs-left">
-                            <h3 class="pink">3</h3>
+                            <h3 class="pink">{{count($orders)-3}}</h3>
                             <span>Total Orders</span>
                         </div>
                         <div class="media-right media-middle">
@@ -30,7 +30,7 @@
                 <div class="card-block">
                     <div class="media">
                         <div class="media-body text-xs-left">
-                            <h3 class="teal">5<font size="1">3%</font></h3>
+                            <h3 class="teal">{{$orders['successCount']}}<font size="1">({{ceil($orders['successCount']*100/count($orders)-3)}}%)</font></h3>
                             <span>Successfull Orders</span>
                         </div>
                         <div class="media-right media-middle">
@@ -47,7 +47,7 @@
                 <div class="card-block">
                     <div class="media">
                         <div class="media-body text-xs-left">
-                            <h3 class="deep-orange">4<font size="1">(4%)</font></h3>
+                            <h3 class="deep-orange">{{$orders['pendingCount']}}<font size="1">({{ceil($orders['pendingCount']*100/count($orders)-3)}}%)</font></h3>
                             <span>Pending Orders</span>
                         </div>
                         <div class="media-right media-middle">
@@ -64,7 +64,7 @@
                 <div class="card-block">
                     <div class="media">
                         <div class="media-body text-xs-left">
-                            <h3 class="cyan">4</h3>
+                            <h3 class="cyan">3</h3>
                             <span>InTransit Orders</span>
                         </div> 
                         <div class="media-right media-middle">
@@ -210,14 +210,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                       <!--  {for $i=0 to 4} -->
+                        <!-- for() -->
                             <tr>
-                                <td class="text-truncate"><a href="#">#1234</a></td>
-                                <td class="text-truncate">&#8377; 500</td>
-                                <td class="text-truncate"><span class="">paid</span></td>
-                                <td class="text-truncate" title="time">11/12/2017 </td>
+                                <td class="text-truncate"><a href="#">MSWLMJTK(1)</a></td>
+                                <td class="text-truncate">&#8377; 222</td>
+                                <td class="text-truncate"><span class="{$statuscolor}">paid</span></td>
+                                <td class="text-truncate" title="{$res[$i]->time}">15-11-2017</td>
                                 <td class="text-truncate">
-                                   <a href="path to invoice"> <i class="icon-ei-arrow-right pink" title="View Order"></i></a> &nbsp;
+                                   <a href="invoice?orderid={$res[$i]->order_id}"> <i class="icon-ei-arrow-right pink" title="View Order"></i></a> &nbsp;
                                    <a href=""> <i class="icon-ei-archive green" title="Invoice"></i></a>
                                 </td>
                             </tr>
@@ -229,7 +229,7 @@
                                 <td class="text-truncate">11/12/2016</td>
                                 <td class="text-truncate">$ 5685.00</td>
                             </tr> -->
-                        <!-- {/for}                             -->
+                        <!-- endfor -->                           
                         </tbody>
                     </table>
                 </div>
@@ -326,4 +326,5 @@
         </div>
       </div>
     </div>
+  
 @endsection

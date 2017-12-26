@@ -14,7 +14,7 @@
             <div class="card-block">
                 <div class="media">
                     <div class="media-body text-xs-left">
-                        <h3 class="pink">{{$brand}}</h3>
+                        <h3 class="pink">{{$brand ?? 0}}</h3>
                         <a href="{{route('brand')}}"><span>Brand</span></a> 
                     </div>
                     <div class="media-right media-middle">
@@ -31,7 +31,7 @@
             <div class="card-block">
                 <div class="media">
                     <div class="media-body text-xs-left">
-                        <h3 class="teal">{{$order}}</h3>
+                        <h3 class="teal">{{$order ?? 0}}</h3>
                         <a href="{{route('order')}}"><span>Orders</span></a> 
                     </div>
                     <div class="media-right media-middle">
@@ -48,7 +48,7 @@
             <div class="card-block">
                 <div class="media">
                     <div class="media-body text-xs-left">
-                        <h3 class="deep-orange">{{$product}}</h3>
+                        <h3 class="deep-orange">{{$product ?? 0}}</h3>
                         <a href="{{route('brand')}}"><span>Product</span></a> 
                     </div>
                     <div class="media-right media-middle">
@@ -65,7 +65,7 @@
             <div class="card-block">
                 <div class="media">
                     <div class="media-body text-xs-left">
-                        <h3 class="cyan">{{$msuser}}</h3>
+                        <h3 class="cyan">{{$msuser ?? 0}}</h3>
                         <a href="{{route('brand')}}"><span>Users</span></a> 
                     </div>
                     <div class="media-right media-middle">

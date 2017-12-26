@@ -17,6 +17,7 @@ class CreateBrandsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('username')->unique();
+            $table->text('image');
             $table->string('company');
             $table->string('website');
             $table->string('email')->unique();

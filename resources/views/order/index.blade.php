@@ -210,9 +210,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <!-- for() -->
+                        @foreach($orders as $order)
+                            @if($order['order_id']!=null)
                             <tr>
-                                <td class="text-truncate"><a href="#">MSWLMJTK(1)</a></td>
+                                <td class="text-truncate"><a href="#">{{$order['order_id']}}</a></td>
                                 <td class="text-truncate">&#8377; 222</td>
                                 <td class="text-truncate"><span class="{$statuscolor}">paid</span></td>
                                 <td class="text-truncate" title="{$res[$i]->time}">15-11-2017</td>
@@ -229,7 +230,8 @@
                                 <td class="text-truncate">11/12/2016</td>
                                 <td class="text-truncate">$ 5685.00</td>
                             </tr> -->
-                        <!-- endfor -->                           
+                            @endif
+                       @endforeach                           
                         </tbody>
                     </table>
                 </div>

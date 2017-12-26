@@ -8,6 +8,10 @@ use App\Suborder;
 
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
     	$orders = $this->getAllOrder();
@@ -29,7 +33,7 @@ class OrderController extends Controller
     	$pendingCount=0;
         $intransitCount=0;
     	
-    	$order = Order::orderBy('created_at','desc')->get();
+    	$order = Order::orderBy('created_at','desc')->paginate(7);
     	foreach ($order as $o) {
     		if($o->status){
               $successCount++;
@@ -41,6 +45,10 @@ class OrderController extends Controller
     	  $orders['successCount']=$successCount;
           $orders['pendingCount']=$pendingCount;
           $orders['intransitCount']=$intransitCount;
+          // echo '<pre>';
+          // print_r(json_decode(json_encode($orders)));
+
+          // dd($orders);
     	return $orders;
 
     }
